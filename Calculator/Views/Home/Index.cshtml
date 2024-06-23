@@ -6,13 +6,20 @@
     Caluclator by trebush
 </div>
 
-<form action="Home/number/" method="POST">
+<form action="Home/Index/" method="POST">
     <br/>
     <input type="number" name="a" />
+    <select name="operation" required>
+        <option value="add" alt="add">+</option>
+        <option value="subtraction" alt="subtraction">-</option>
+        <option value="multiplication" alt="multiplication">*</option>
+        <option value="division" alt="division">/</option>
+    </select>
     <input type="number" name="b"/>
     <input type="submit" value="Submit" />
 </form>
-@if (ViewBag.Sum != null)
+
+@if (ViewBag.Result != null)
 {
-    <p>The sum is: @ViewBag.Sum</p>
+    <p>The result of @ViewBag.Operation @ViewBag.a and @ViewBag.b is: @ViewBag.Result</p>
 }
